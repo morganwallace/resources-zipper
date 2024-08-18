@@ -25,7 +25,7 @@ jobs:
         uses: TheDoctor0/zip-release@0.7.6
         with:
           # Filename for archive
-          filename: build/resources.zip# default is release.zip
+          filename: build/resources.zip
           # Base path for archive files
           path: all_resources
           # Working directory before zipping
