@@ -5,6 +5,6 @@
  },
  
  "overrides": [
-  {"predicate": {"custom_model_data":1}, "model": "block/custom/draakje"}
+  {"predicate": {"custom_model_data":5301}, "model": "block/custom/draakje"}
  ]
 }
