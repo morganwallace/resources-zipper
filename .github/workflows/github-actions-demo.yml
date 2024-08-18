@@ -1,0 +1,26 @@
+name: Zip resources directories together
+run-name: ${{ github.actor }} is modifying resources and making a new zip 🚀
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  Zip-Resources:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: action-zip
+        uses: montudor/action-zip@v1.0.0
+        with:
+          # See montudor/action-zip README.md for more info
+          args: zip -qq -r resources.zip all_resources
+      - run: echo "🍏 This job's status is ${{ job.status }}."
