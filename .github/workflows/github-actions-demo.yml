@@ -27,7 +27,7 @@ jobs:
           # Filename for archive
           filename: build/resources.zip# default is release.zip
           # Base path for archive files
-          path: all_resources# optional, default is .
+          path: all_resources
           # Working directory before zipping
           # directory: # optional, default is .
       - name: Deploy 🚀
