@@ -30,6 +30,7 @@ jobs:
           path: .
           # Working directory before zipping
           directory: all_resources
+      - run: echo $GITHUB_SHA > build/sha.txt
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
