@@ -19,12 +19,17 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: action-zip
-        uses: montudor/action-zip@v1.0.0
+      - name: Zip Release
+        # You may pin to the exact commit or the version.
+        # uses: TheDoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554
+        uses: TheDoctor0/zip-release@0.7.6
         with:
-          # See montudor/action-zip README.md for more info
-          args: zip -r ../build/resources.zip /.*
-          working-directory: all_resources
+          # Filename for archive
+          filename: build/resources.zip# default is release.zip
+          # Base path for archive files
+          path: all_resources# optional, default is .
+          # Working directory before zipping
+          # directory: # optional, default is .
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
